@@ -1,2 +1,3 @@
-# otus_java_2020_03
-Курс Java в Otus (gradle)
+Студент<br>
+Lovchikova Ekaterina (Ловчикова Екатерина)<br>
+katrina_n@mail.ru
