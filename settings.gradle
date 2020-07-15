@@ -9,4 +9,5 @@
 
 rootProject.name = 'otus_java_2020_03'
 include 'hw01-Gradle'
+include 'hw13-IoC'
 
