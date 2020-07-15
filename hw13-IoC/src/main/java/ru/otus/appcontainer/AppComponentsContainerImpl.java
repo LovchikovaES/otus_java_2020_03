@@ -57,7 +57,7 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
 
         Constructor<?>[] constructors = configClass.getConstructors();
         if (constructors.length > 1) {
-            throw new RuntimeException("Config class can consists only one constructor!");
+            throw new RuntimeException("Config class can consist only one constructor!");
         }
 
         Object configInstance = constructors[0].newInstance();
