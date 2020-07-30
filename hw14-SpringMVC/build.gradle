@@ -1,0 +1,33 @@
+plugins {
+    id 'war'
+}
+
+sourceCompatibility = JavaVersion.VERSION_13
+targetCompatibility = JavaVersion.VERSION_13
+
+dependencies {
+    implementation("ch.qos.logback:logback-classic")
+    implementation("com.google.code.gson:gson:${Versions.gson}")
+    implementation("com.h2database:h2")
+    implementation("org.hibernate:hibernate-core")
+
+    implementation("org.springframework:spring-context")
+    implementation("org.springframework:spring-webmvc")
+    implementation("org.springframework:spring-web")
+    implementation("org.thymeleaf:thymeleaf")
+    implementation("org.thymeleaf:thymeleaf-spring5")
+    providedCompile("javax.servlet:javax.servlet-api")
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.with {
+        encoding = 'UTF-8'
+    }
+}
+
+war {
+    archiveName 'hw14-SpringMVC.war'
+    from 'src/main/resources'
+}
