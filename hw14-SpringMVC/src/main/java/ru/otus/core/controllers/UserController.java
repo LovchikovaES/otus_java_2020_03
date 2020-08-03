@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import ru.otus.core.model.User;
 import ru.otus.core.service.DBServiceUser;
 
-import java.util.List;
+import java.util.ArrayList;
 
 
 @Controller
@@ -23,8 +23,7 @@ public class UserController {
 
     @GetMapping({"/", "/user/list"})
     public String userListView(Model model) {
-        List<User> users = repository.getAllUsers().get();
-        model.addAttribute("users", users);
+        model.addAttribute("users", repository.getAllUsers().orElse(new ArrayList<User>()));
         return "userList.html";
     }
 
