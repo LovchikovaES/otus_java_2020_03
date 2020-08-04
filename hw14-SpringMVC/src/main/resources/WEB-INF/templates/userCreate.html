@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create user</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input:read-only {
+            background: lightgray;
+        }
+
+        input {
+            width: 200px;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<form accept-charset="utf-8" id="create-form" th:action="@{/user/save}" th:method="post" th:object="${user}">
+    <h1>New User:</h1>
+
+    <div class="row">
+        <label for="name">Name:</label>
+        <input id="name" name="name" th:value="${user.name}" type="text" value="name"/>
+    </div>
+
+    <div class="row">
+        <label for="login">Login:</label>
+        <input id="login" name="login" th:value="${user.login}" type="text" value="login"/>
+    </div>
+
+    <div class="row">
+        <label for="password">Password:</label>
+        <input id="password" name="password" th:value="${user.password}" type="password"/>
+    </div>
+
+    <div class="row">
+        <label for="address">Address:</label>
+        <input id="address" name="address" th:value="${user.address}" type="text"/>
+    </div>
+
+    <div class="row">
+        <label for="phones">Phones:</label>
+        <input id="phones" name="phones" th:value="${user.phones}" type="text"/>
+    </div>
+
+    <div class="row">
+        <button type="submit">Save</button>
+    </div>
+</form>
+
+</body>
+</html>
